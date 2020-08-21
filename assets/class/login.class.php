@@ -24,12 +24,12 @@ class Login
     }
 
 
-    public function getPass()
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setPass($e)
+    public function setEmail($e)
     {
         $this->email = $e;
 
@@ -39,13 +39,15 @@ class Login
 
     public function Login()
     {
-        $sql = "SELECT * FROM usuarios WHERE nome = '$this->user' AND email = '$this->email'";
+        $sql = "SELECT * FROM usuarios WHERE nome = '$this->user' AND email = '$this->email' ";
         $sql = $this->pdo->query($sql);
 
 
         if ($sql->rowCount() > 0) {
             $_SESSION['ativo'] = true;
             $_SESSION['user'] = $this->user;
+
+            header("Location: principal.php");
         }
     }
 }
