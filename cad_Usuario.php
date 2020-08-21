@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+if ($_SESSION['ativo'] != true) {
+    header("Location: login.php");
+}
+
+require 'confgig.php';
+require 'assets/class/usuarios.class.php';
+
+
 
 
 ?>
@@ -29,6 +37,10 @@ session_start();
             </div>
             <button type="submit" class="btn btn-info btn-md">Submit</button>
         </form>
+
+        <table>
+
+        </table>
     </div>
 
 </div>
