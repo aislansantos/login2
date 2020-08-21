@@ -5,7 +5,7 @@ if ($_SESSION['ativo'] != true) {
     header("Location: login.php");
 }
 
-require 'confgig.php';
+require 'config.php';
 require 'assets/class/usuarios.class.php';
 
 
