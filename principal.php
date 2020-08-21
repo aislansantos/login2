@@ -8,9 +8,10 @@ if ($_SESSION['ativo'] != true) {
 require 'menu.php';
 ?>
 
-
-<div>
-    
+<div class="container">
+    <div>
+        <p>bem vindo <?= ucfirst($_SESSION['user']); ?> !</p>
+    </div>
 </div>
 
 </body>

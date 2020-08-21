@@ -21,7 +21,11 @@ session_start();
             </div>
             <div class="form-group">
                 <label for="" >Tipo</label>
-                <select class = "form-control name"></select>
+                <select class = "form-control name">
+                    <option value="#">Selecione</option>
+                    <option value="adm">Administrador</option>
+                    <option value="op">Operador</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-info btn-md">Submit</button>
         </form>
