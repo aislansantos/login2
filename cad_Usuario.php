@@ -19,6 +19,10 @@ session_start();
                 <label for="">E-mail</label>
                 <input type="email" class="form-control email" id="emailUser">
             </div>
+            <div class="form-group">
+                <label for="" >Tipo</label>
+                <select class = "form-control name"></select>
+            </div>
             <button type="submit" class="btn btn-info btn-md">Submit</button>
         </form>
     </div>
