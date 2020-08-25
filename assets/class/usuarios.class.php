@@ -54,7 +54,7 @@ class Usuarios
 
 
     public function listarUsuarios(){
-        $sql = "SELECT * FROM Usuarios";
+        $sql = "SELECT * FROM usuarios";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
 
@@ -63,5 +63,10 @@ class Usuarios
         }else{
             return array();
         }
+    }
+
+    public function consultaEditar($cod = '')
+    {
+        
     }
 }

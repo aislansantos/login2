@@ -1,14 +1,17 @@
 <?php
 session_start();
-
 if ($_SESSION['ativo'] != true) {
     header("Location: login.php");
 }
-
 require 'config.php';
 require 'assets/class/usuarios.class.php';
 
+$usuario = new Usuarios($pdo);
 
+if (!empty($_GET['id'])) {
+    $cod = filter_input(INPUT_GET, 'id');
+    $selecionar = $usuario->consultaEditar($cod);
+}
 
 
 ?>
@@ -28,14 +31,15 @@ require 'assets/class/usuarios.class.php';
                 <input type="email" class="form-control email" id="emailUser">
             </div>
             <div class="form-group">
-                <label for="" >Tipo</label>
-                <select class = "form-control name">
+                <label for="">Tipo</label>
+                <select class="form-control name">
                     <option value="#">Selecione</option>
                     <option value="adm">Administrador</option>
                     <option value="op">Operador</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-info btn-md">Submit</button>
+            <button type="submit" class="btn btn-info btn-md">Salvar</button>
+            <a href="usuario_Consulta.php" class="btn btn-info btn-md">Consulta</a>
         </form>
 
         <table>
